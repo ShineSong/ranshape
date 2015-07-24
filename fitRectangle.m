@@ -1,4 +1,20 @@
 function [x,y,w,h,a,rms]=fitRectangle(contour)
+%Fit rectangle use RANSAC.Select approxmiate right-angle as candidate
+%points.Use RANSAC algorithm to construct rectangle model,and rotate from
+%1:0.5:180 degree to find the possible aspect.
+%
+%---INPUT---
+%contour        - contour consist of 2d points, nx2 matrix.
+%---OUTPUT---
+%x              - center of rectangle.
+%y              - center of rectangle.
+%w              - width of rectangle.
+%h              - height of rectangle.
+%a              - aspect of rectangle.
+%rms            - rms of fitting.
+%
+%Author ; Shine Song 
+%original version 2015.07.24
     ANGLE_LOWER_BOUND=pi;
     angleTable=CalcAngleTable(contour);
     peakIdx=find(angleTable>ANGLE_LOWER_BOUND);

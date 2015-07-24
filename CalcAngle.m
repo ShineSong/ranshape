@@ -1,4 +1,15 @@
 function angle=CalcAngle(p1,p0,p2)
+%Compute anticlockwise angle between three 2D point.
+%
+%---INPUT---
+%p1         - edge point 1
+%p0         - center point
+%p2         - edge point 2
+%---OUTPUT---
+%angle      - anticlockwise angle,[0,2*pi)
+%
+%Author ; Shine Song 
+%original version 2015.07.24
     edge1=p1-p0;
     edge2=p2-p0;
     len1=norm(edge1,2);

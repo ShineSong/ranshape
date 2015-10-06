@@ -14,7 +14,7 @@ function [x,y,w,h,a,rms]=fitRectangle2(contour)
 %
 %Author ; Shine Song 
 %original version 2015.07.24
-    [coef,score,latent,t2]=princomp(contour)
+    [coef,score,latent,t2]=princomp(contour);
     w=max(score(:,1))-min(score(:,1));
     h=max(score(:,2))-min(score(:,2));
     center=mean(contour,1);
